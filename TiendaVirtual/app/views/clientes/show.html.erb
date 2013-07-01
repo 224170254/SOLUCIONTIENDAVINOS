@@ -4,26 +4,30 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:Rut) %>:</strong></dt>
-  <dd><%= @cliente.Rut %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:NombreApellido) %>:</strong></dt>
-  <dd><%= @cliente.NombreApellido %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:RazonSocial) %>:</strong></dt>
-  <dd><%= @cliente.RazonSocial %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:Direccion) %>:</strong></dt>
-  <dd><%= @cliente.Direccion %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:Telefono) %>:</strong></dt>
-  <dd><%= @cliente.Telefono %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:Movil) %>:</strong></dt>
-  <dd><%= @cliente.Movil %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:FechaNacimiento) %>:</strong></dt>
-  <dd><%= @cliente.FechaNacimiento %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
-  <dd><%= @cliente.email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:Contrasena) %>:</strong></dt>
-  <dd><%= @cliente.Contrasena %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:estado) %>:</strong></dt>
-  <dd><%= @cliente.estado %></dd>
+
+  <dt><strong>Tipo Cliente:</strong></dt>
+  <dd>
+  	<%if @cliente.estado == 0 %>
+  		Persona
+  	<%else%>
+  		Empresa
+  	<%end%> 	
+  </dd>
+  <dt><strong>Rut:</strong></dt><dd><%= @cliente.Rut %></dd>
+  
+  	<%if @cliente.estado == 0 %>
+	  	<dt><strong>Nombre:</strong></dt>
+	  	<dd><%= @cliente.NombreApellido %></dd>
+  	<%else%>
+  		<dt><strong>Razon Social:</strong></dt>
+  		<dd><%= @cliente.RazonSocial %></dd>  		
+  	<%end%> 	
+  <dt><strong>Direccion : </strong></dt><dd><%= @cliente.Direccion %></dd>
+  <dt><strong>Telefono :</strong></dt><dd><%= @cliente.Telefono %></dd>
+  <dt><strong>Celular:</strong></dt><dd><%= @cliente.Movil %></dd>
+  <dt><strong>FechaCreacion/Nacimiento :</strong></dt><dd><%= @cliente.FechaNacimiento %></dd>
+  <dt><strong>Email:</strong></dt><dd><%= @cliente.email %></dd>
+  <dt><strong>Contrasena:</strong></dt><dd><%= @cliente.Contrasena %></dd>
 </dl>
 
 <div class="form-actions">

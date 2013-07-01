@@ -1,21 +1,32 @@
 <div class="page-header">
-  <h1>Clientes</h1>
+  <h2>Clientes</h2>
+</div>
+<a class="btn" href="http://www.google.cl" data-toggle="modal" data-target="#myModal">Launch Modal</a>
+<div class="modal fade" id="myModal">
+	sdsdfsdf
+	fsdf
+	sdfs
+	df
+	sdf
+	sdf
+	sdf
+	sd
+	fsd
+	f
 </div>
 
-<table class="table table-striped">
+<table class="table table-striped table-bordered table-condensed">
   <thead>
     <tr>
       <th>id</th>
       <th>Rut</th>
-      <th>NombreApellido</th>
-      <th>RazonSocial</th>
+      <th>Nombre o Razon</th>
       <th>Direccion</th>
       <th>Telefono</th>
       <th>Movil</th>
-      <th>FechaNacimiento</th>
+      <th>Fecha Nac-Creacion</th>
       <th>email</th>
-      <th>estado</th>
-      <th>created_at</th>
+      <th>Tipo</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -24,29 +35,38 @@
       <tr>
         <td><%= link_to cliente.id, cliente_path(cliente) %></td>
         <td><%= cliente.Rut %></td>
-        <td><%= cliente.NombreApellido %></td>
-        <td><%= cliente.RazonSocial %></td>
+        <td><%if cliente.estado== 0 %>
+        		<%= cliente.NombreApellido %>
+        	<%else%>
+        		<%= cliente.RazonSocial %>
+        	<%end%>
+        </td>
         <td><%= cliente.Direccion %></td>
         <td><%= cliente.Telefono %></td>
         <td><%= cliente.Movil %></td>
         <td><%= cliente.FechaNacimiento %></td>
         <td><%= cliente.email %></td>
-        <td><%= cliente.estado %></td>
-        <td><%=l cliente.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+        	<%if cliente.estado== 0 %>
+        		Persona
+        	<%else%>
+        		Empresa
+        	<%end%>
+        </td>
+
+        <td>
+          <%= link_to t('.Editar', :default => "Editar"),
                       edit_cliente_path(cliente), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to t('.Eliminar', :default => t("helpers.links.Eliminar")),
                       cliente_path(cliente),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Esta Seguro?')) },
                       :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.Nuevo', :default => "Nuevo Cliente"),
             new_cliente_path,
             :class => 'btn btn-primary' %>

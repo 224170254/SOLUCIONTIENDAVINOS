@@ -1,18 +1,29 @@
 <%= form_for @cliente, :html => { :class => 'form-horizontal' } do |f| %>
+  
+   <div class="control-group">
+   	<%= f.label :estado, "Tipo Cliente" , :class => 'control-label' %>
+    <div class="controls">
+      <%= f.select :estado,[['Persona',0],['Empresa',1]] , :class => 'select_field' %>
+    </div>
+
+  </div>
+
   <div class="control-group">
     <%= f.label :Rut, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :Rut, :class => 'text_field' %>
     </div>
   </div>
+  
   <div class="control-group">
-    <%= f.label :NombreApellido, :class => 'control-label' %>
+    <%= f.label :NombreApellido, 'Nombre y Apellido', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :NombreApellido, :class => 'text_field' %>
     </div>
   </div>
+
   <div class="control-group">
-    <%= f.label :RazonSocial, :class => 'control-label' %>
+    <%= f.label :RazonSocial, 'Razon Social', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :RazonSocial, :class => 'text_field' %>
     </div>
@@ -30,35 +41,33 @@
     </div>
   </div>
   <div class="control-group">
-    <%= f.label :Movil, :class => 'control-label' %>
+    <%= f.label :Movil, 'Celular' ,:class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :Movil, :class => 'text_field' %>
     </div>
   </div>
+
   <div class="control-group">
-    <%= f.label :FechaNacimiento, :class => 'control-label' %>
+    <%= f.label :FechaNacimiento, 'Fecha Nac-Creacion', :class => 'control-label' %>
     <div class="controls">
       <%= f.date_select :FechaNacimiento, :class => 'date_select' %>
     </div>
   </div>
+
   <div class="control-group">
     <%= f.label :email, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :email, :class => 'text_field' %>
+      <%= f.email_field :email, :class => 'text_field' %>
     </div>
   </div>
+
   <div class="control-group">
     <%= f.label :Contrasena, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :Contrasena, :class => 'text_field' %>
+      <%= f.password_field :Contrasena, :class => 'text_field' %>
     </div>
   </div>
-  <div class="control-group">
-    <%= f.label :estado, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.number_field :estado, :class => 'number_field' %>
-    </div>
-  </div>
+
 
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
