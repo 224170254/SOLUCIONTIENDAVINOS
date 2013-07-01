@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TiendaVirtual</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<%= nav_bar :static => :top, :brand => "ADMINISTRACION TIENDA" do %>
+	    <% menu_group :pull => :right do %>
+	    
+
+		    <%= drop_down "Mantenedores" do %>
+		        <%= menu_item "Productos", "#" %>
+		        <%= menu_item "Clientes", clientes_path %>
+		        <%= menu_item "Bodegas", "#" %>
+		        <%= menu_item "Formato", "#" %>        
+		    <% end %>
+		    
+		    <%= menu_item "Facturas", '#' %>
+		    
+   		    <%= drop_down "Informes" do %>
+		        <%= menu_item "Productos", "#" %>
+		        <%= menu_item "Clientes", "#" %>
+		        <%= menu_item "Bodegas", "#" %>
+		        <%= menu_item "Formato", "#" %>        
+		    <% end %>   	        
+	        <%= menu_item "Salir", '/inicio/index' %>
+	    <% end %>
+	<% end %>
+<br />
+
+<div class="container">
+	<div class="row-fluid">
+<%= yield %>
+</div>
+</div>
+</body>
+</html>
