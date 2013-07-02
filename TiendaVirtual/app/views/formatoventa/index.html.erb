@@ -1,0 +1,40 @@
+<%- model_class = Formatoventum -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:descripcion) %></th>
+      <th><%= model_class.human_attribute_name(:unidades) %></th>
+      <th><%= model_class.human_attribute_name(:costoadicional) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @formatoventa.each do |formatoventum| %>
+      <tr>
+        <td><%= link_to formatoventum.id, formatoventum_path(formatoventum) %></td>
+        <td><%= formatoventum.descripcion %></td>
+        <td><%= formatoventum.unidades %></td>
+        <td><%= formatoventum.costoadicional %></td>
+        <td><%=l formatoventum.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_formatoventum_path(formatoventum), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      formatoventum_path(formatoventum),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_formatoventum_path,
+            :class => 'btn btn-primary' %>

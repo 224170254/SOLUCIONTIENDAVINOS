@@ -6,3 +6,8 @@
   url = ($ @).attr('href')
   ($ target).load(url)
 
+ $(document).ready(`function() {
+$(".boton").click(function(event) {
+$("#myModal").load('clientes');
+});
+}`);

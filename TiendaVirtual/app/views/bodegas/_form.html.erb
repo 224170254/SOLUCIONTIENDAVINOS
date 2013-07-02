@@ -1,0 +1,48 @@
+<%= form_for @bodega, :html => { :class => 'form-horizontal' } do |f| %>
+
+  <div class="control-group">
+    <%= f.label :rut,"Rut", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rut, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :nombre,"Nombre Razon", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre, :class => 'text_field' %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :direccion,"Direccion", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :direccion, :class => 'text_field' %>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <%= f.label :correo,"Correo", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.email_field :correo, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :telefono1,"Telefono 1", :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefono1, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :telefono2, "Telefono 2" ,:class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefono2, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit @boton = "Actualizar", :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => "Cancelar"),
+                bodegas_path, :class => 'btn' %>
+  </div>
+<% end %>

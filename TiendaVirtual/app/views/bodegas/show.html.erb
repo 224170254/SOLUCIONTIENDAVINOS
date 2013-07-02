@@ -1,0 +1,35 @@
+<%- model_class = Bodega -%>
+<h3>Bodega</h3>
+
+<dl class="dl-horizontal">
+  <dt><strong>Rut :</strong></dt>
+  <dd><%= @bodega.rut %></dd>	
+  
+  <dt><strong>Nombre Razon :</strong></dt>
+  <dd><%= @bodega.nombre %></dd>
+  
+  <dt><strong>Direccion :</strong></dt>
+  <dd><%= @bodega.direccion %></dd>
+  
+  <dt><strong>Correo :</strong></dt>
+  <dd><%= @bodega.correo %></dd>
+  
+  <dt><strong>Telefono 1 :</strong></dt>
+  <dd><%= @bodega.telefono1 %></dd>
+  
+<dt><strong>Telefono 2 :</strong></dt>
+  <dd><%= @bodega.telefono2 %></dd>
+  
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => "Volver"),
+              bodegas_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => "Editar"),
+              edit_bodega_path(@bodega), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => "Eliminar"),
+              bodega_path(@bodega),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

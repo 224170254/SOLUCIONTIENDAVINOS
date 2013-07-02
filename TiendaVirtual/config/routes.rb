@@ -1,4 +1,16 @@
 TiendaVirtual::Application.routes.draw do
+  resources :formatoventa
+
+
+  resources :bodegas
+
+
+  resources :mixproductos
+
+
+  resources :productos
+
+
   get "administrar/index"
     resources :clientes
 

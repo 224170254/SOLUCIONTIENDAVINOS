@@ -1,0 +1,26 @@
+<%= form_for @formatoventum, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :descripcion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :descripcion, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :unidades, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :unidades, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :costoadicional, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :costoadicional, :class => 'number_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                formatoventa_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= nav_bar :static => :top, :brand => "Tienda de Vinos" do %>
+		<%= nav_bar :static => :top, :brand => "Tienda de Vinos" do %>
 	    <% menu_group :pull => :right do %>
 	        <%= menu_item "Registrarse", clientes_path %>
 	        <%= menu_item "LogOut","#" %>
@@ -16,7 +16,7 @@
   	        
 	    <% end %>
 	<% end %>	
-<br />
+<br />	
 <div class="container">
 	<div class="row-fluid">
 <%= yield %>

@@ -12,25 +12,21 @@
 	    
 
 		    <%= drop_down "Mantenedores" do %>
-		        <%= menu_item "Productos", "#" %>
+		        <%= menu_item "Productos", productos_path %>
 		        <%= menu_item "Clientes", clientes_path %>
-		        <%= menu_item "Bodegas", "#" %>
-		        <%= menu_item "Formato", "#" %>        
+		        <%= menu_item "Bodegas", bodegas_path%>
+		        <%= menu_item "Formato Venta", formatoventa_path %>        
 		    <% end %>
 		    
 		    <%= menu_item "Facturas", '#' %>
 		    
    		    <%= drop_down "Informes" do %>
-		        <%= menu_item "Productos", "#" %>
-		        <%= menu_item "Clientes", "#" %>
-		        <%= menu_item "Bodegas", "#" %>
-		        <%= menu_item "Formato", "#" %>        
+		        <%= menu_item "Listado", "#" %>
 		    <% end %>   	        
 	        <%= menu_item "Salir", '/inicio/index' %>
 	    <% end %>
 	<% end %>
 <br />
-
 <div class="container-fluid">
 <div class="hero-unit">
 <%= yield %>

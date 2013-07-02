@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  idmaestro: 1
+  stock: 1
+  precio: 1
+  idformato: 1
+  idformatoventa: 1
+  idbodega: 1
+
+two:
+  idmaestro: 1
+  stock: 1
+  precio: 1
+  idformato: 1
+  idformatoventa: 1
+  idbodega: 1

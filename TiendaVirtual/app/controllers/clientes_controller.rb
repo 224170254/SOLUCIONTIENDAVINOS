@@ -26,6 +26,7 @@ class ClientesController < ApplicationController
   # GET /clientes/new.json
   def new
     @cliente = Cliente.new
+      @boton = "Nuevo Cliente"
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,6 +37,7 @@ class ClientesController < ApplicationController
   # GET /clientes/1/edit
   def edit
     @cliente = Cliente.find(params[:id])
+    @boton = "Actualizar"
   end
 
   # POST /clientes

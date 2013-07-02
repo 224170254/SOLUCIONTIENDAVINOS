@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  TipoProducto: 
+  Descripcion: MyString
+  capacidad: 1
+  comentario: MyText
+  idCategoria: 1
+  Origen: MyString
+  Gastronomia: MyString
+  Cata: MyString
+  Temperatura: 
+  anada: 1
+  crianza: MyString
+  uva: MyString
+
+two:
+  TipoProducto: 
+  Descripcion: MyString
+  capacidad: 1
+  comentario: MyText
+  idCategoria: 1
+  Origen: MyString
+  Gastronomia: MyString
+  Cata: MyString
+  Temperatura: 
+  anada: 1
+  crianza: MyString
+  uva: MyString

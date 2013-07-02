@@ -1,0 +1,80 @@
+<%= form_for @producto, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :TipoProducto, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :TipoProducto, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :Descripcion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Descripcion, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :capacidad, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :capacidad, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :comentario, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :comentario, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :idCategoria, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :idCategoria, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :Origen, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Origen, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :Gastronomia, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Gastronomia, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :Cata, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :Cata, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :Temperatura, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :Temperatura, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :anada, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :anada, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :crianza, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :crianza, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :uva, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :uva, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                productos_path, :class => 'btn' %>
+  </div>
+<% end %>

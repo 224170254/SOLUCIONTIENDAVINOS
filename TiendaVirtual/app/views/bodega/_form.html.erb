@@ -1,0 +1,44 @@
+<%= form_for @bodega, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :nombre, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :direccion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :direccion, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :correo, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :correo, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :telefono1, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefono1, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :telefono2, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefono2, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :rut, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :rut, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                bodega_path, :class => 'btn' %>
+  </div>
+<% end %>

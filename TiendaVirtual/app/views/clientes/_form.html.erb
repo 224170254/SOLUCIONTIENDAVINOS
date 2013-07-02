@@ -5,7 +5,6 @@
     <div class="controls">
       <%= f.select :estado,[['Persona',0],['Empresa',1]] , :class => 'select_field' %>
     </div>
-
   </div>
 
   <div class="control-group">
@@ -67,11 +66,8 @@
       <%= f.password_field :Contrasena, :class => 'text_field' %>
     </div>
   </div>
-
-
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                clientes_path, :class => 'btn' %>
+    <%= f.submit @boton, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => "Cancelar"),clientes_path, :class => 'btn' %>
   </div>
 <% end %>

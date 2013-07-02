@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  descripcion: MyString
+  unidades: 1
+  costoadicional: 1
+
+two:
+  descripcion: MyString
+  unidades: 1
+  costoadicional: 1
