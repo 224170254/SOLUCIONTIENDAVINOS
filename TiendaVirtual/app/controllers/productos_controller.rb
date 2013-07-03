@@ -4,7 +4,8 @@ class ProductosController < ApplicationController
   # GET /productos.json
   def index
     @productos = Producto.all
-
+   
+     @Categoria = Categoria.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @productos }
@@ -26,7 +27,7 @@ class ProductosController < ApplicationController
   # GET /productos/new.json
   def new
     @producto = Producto.new
-
+    @Categoria = Categoria.all
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @producto }

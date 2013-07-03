@@ -1,24 +1,19 @@
 <%- model_class = Producto -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<table class="table table-striped">
+  <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
+<table class="table table-striped table-bordered table-condensed">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:TipoProducto) %></th>
-      <th><%= model_class.human_attribute_name(:Descripcion) %></th>
-      <th><%= model_class.human_attribute_name(:capacidad) %></th>
-      <th><%= model_class.human_attribute_name(:comentario) %></th>
-      <th><%= model_class.human_attribute_name(:idCategoria) %></th>
-      <th><%= model_class.human_attribute_name(:Origen) %></th>
-      <th><%= model_class.human_attribute_name(:Gastronomia) %></th>
-      <th><%= model_class.human_attribute_name(:Cata) %></th>
-      <th><%= model_class.human_attribute_name(:Temperatura) %></th>
-      <th><%= model_class.human_attribute_name(:anada) %></th>
-      <th><%= model_class.human_attribute_name(:crianza) %></th>
-      <th><%= model_class.human_attribute_name(:uva) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>id</th>
+      <th>TipoProducto</th>
+      <th>Descripcion</th>
+      <th>Capacidad</th>
+      <th>Categoria</th>
+      <th>Origen</th>
+      <th>Cata</th>
+      <th>Temperatura</th>
+      <th>Añada</th>
+      <th>Crianza</th>
+      <th>Uva</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -26,23 +21,22 @@
     <% @productos.each do |producto| %>
       <tr>
         <td><%= link_to producto.id, producto_path(producto) %></td>
-        <td><%= producto.TipoProducto %></td>
+        <td><%= producto.TipoProducto %>
+        </td>
         <td><%= producto.Descripcion %></td>
         <td><%= producto.capacidad %></td>
-        <td><%= producto.comentario %></td>
-        <td><%= producto.idCategoria %></td>
+        <td><% @vat =  Categoria.find(producto.idCategoria)%>
+        	<%= @vat.descripcion %></td>
         <td><%= producto.Origen %></td>
-        <td><%= producto.Gastronomia %></td>
         <td><%= producto.Cata %></td>
         <td><%= producto.Temperatura %></td>
         <td><%= producto.anada %></td>
         <td><%= producto.crianza %></td>
         <td><%= producto.uva %></td>
-        <td><%=l producto.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to t('.edit', :default => "Editar"),
                       edit_producto_path(producto), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+          <%= link_to t('.destroy', :default => "Eliminar"),
                       producto_path(producto),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
