@@ -1,7 +1,6 @@
 <%- model_class = Formatoventum -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
+  <h2>Formatos de Venta</h2>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -22,7 +21,7 @@
         <td><%= formatoventum.costoadicional %></td>
         <td><%=l formatoventum.created_at %></td>
         <td>
-          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+          <%= link_to t('.edit', :default => "Editar"),
                       edit_formatoventum_path(formatoventum), :class => 'btn btn-mini' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       formatoventum_path(formatoventum),

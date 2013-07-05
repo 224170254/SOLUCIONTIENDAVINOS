@@ -6,8 +6,11 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-		<%= nav_bar :static => :top, :brand => "Tienda de Vinos" do %>
+<body id="bodytienda">
+<div class="container">
+<div class="span12 columns">
+	<div class="row">
+		<%= nav_bar :static => :top,:inverse => true, :brand => "Tienda de Vinos" do %>
 	    <% menu_group :pull => :right do %>
 	        <%= menu_item "Registrarse", clientes_path %>
 	        <%= menu_item "LogOut","#" %>
@@ -16,11 +19,32 @@
   	        
 	    <% end %>
 	<% end %>	
+	</div>
+</div>
+</div>
 <br />	
+
 <div class="container">
-	<div class="row-fluid">
-<%= yield %>
+	<div class="span12">
+	<div class="row">
+		<div class="well" style="background-color: #8A0808; border: none;">
+			<div class="row-fluid">
+				<div class="span3">
+					<div class="well" style="background-color:#FBFBEF; border: none;">
+						
+					</div>
+				</div>
+				
+				<div class="span9">
+					<div class="well" style="background-color:#FBFBEF; border: none;">
+					<%= yield %>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
 </div>
-</div>
+
 </body>
 </html>

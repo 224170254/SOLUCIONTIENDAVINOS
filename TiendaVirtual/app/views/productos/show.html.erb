@@ -1,19 +1,28 @@
 <%- model_class = Producto -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
-</div>
+  <h3>Producto</h3>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:TipoProducto) %>:</strong></dt>
-  <dd><%= @producto.TipoProducto %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:Descripcion) %>:</strong></dt>
+  <dt><strong>Tipo Producto:</strong></dt>
+  <dd><%if @producto.TipoProducto == 0 %>
+  			Vino
+  		<%else%>
+  			Caja
+  		<%end%> 
+   </dd>
+  <dt><strong>Descripcion : </strong></dt>
   <dd><%= @producto.Descripcion %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:capacidad) %>:</strong></dt>
+  
+  <dt><strong>Capacidad:</strong></dt>
   <dd><%= @producto.capacidad %></dd>
+  
   <dt><strong><%= model_class.human_attribute_name(:comentario) %>:</strong></dt>
   <dd><%= @producto.comentario %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:idCategoria) %>:</strong></dt>
-  <dd><%= @producto.idCategoria %></dd>
+  
+  <dt><strong>Categoria :</strong></dt>
+  <dd><% @var1 = Categoria.find(@producto.id) %>
+  	<%=@var1.descripcion %>
+  </dd>
+  
   <dt><strong><%= model_class.human_attribute_name(:Origen) %>:</strong></dt>
   <dd><%= @producto.Origen %></dd>
   <dt><strong><%= model_class.human_attribute_name(:Gastronomia) %>:</strong></dt>
@@ -31,11 +40,11 @@
 </dl>
 
 <div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
+  <%= link_to t('.back', :default => "Volver"),
               productos_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+  <%= link_to t('.edit', :default => "Editar"),
               edit_producto_path(@producto), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+  <%= link_to t('.destroy', :default => "Eliminar"),
               producto_path(@producto),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },

@@ -4,13 +4,13 @@
   <thead>
     <tr>
       <th>id</th>
-      <th>TipoProducto</th>
+      <th>Tipo</th>
       <th>Descripcion</th>
       <th>Capacidad</th>
       <th>Categoria</th>
       <th>Origen</th>
       <th>Cata</th>
-      <th>Temperatura</th>
+      <th>Temp</th>
       <th>Añada</th>
       <th>Crianza</th>
       <th>Uva</th>
@@ -18,15 +18,15 @@
     </tr>
   </thead>
   <tbody>
-    <% @productos.each do |producto| %>
+    <% @productoslst.each do |producto| %>
       <tr>
         <td><%= link_to producto.id, producto_path(producto) %></td>
-        <td><%= producto.TipoProducto %>
+        <td><%= producto.Tipo %>
         </td>
-        <td><%= producto.Descripcion %></td>
+        <td><%= producto.desc1 %></td>
         <td><%= producto.capacidad %></td>
-        <td><% @vat =  Categoria.find(producto.idCategoria)%>
-        	<%= @vat.descripcion %></td>
+        <td><%= producto.desc2%>
+        	</td>
         <td><%= producto.Origen %></td>
         <td><%= producto.Cata %></td>
         <td><%= producto.Temperatura %></td>
@@ -47,6 +47,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.new', :default => "Nuevo Producto"),
             new_producto_path,
             :class => 'btn btn-primary' %>
