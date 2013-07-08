@@ -6,7 +6,7 @@ class ProductosController < ApplicationController
    @productos = Producto.all
    @productoslst = Producto.find_by_sql "SELECT productos.id , case when tipoproducto= 0 then 'VINO' else 'CAJA' end as Tipo,productos.descripcion as desc1,
                                          capacidad , categoria.descripcion as  desc2,
-                                         origen,cata,temperatura, anada, crianza, uva  
+                                         origen,cata,temperatura, anada, crianza, uva, productos.imagen  
                                          FROM productos, categoria
                                          where  productos.idCategoria = categoria.id"
    @Categoria = Categoria.all
@@ -20,10 +20,7 @@ class ProductosController < ApplicationController
   # GET /productos/1.json
   def show
     @producto = Producto.find(params[:id])
-   
-    
-
-    respond_to do |format|
+     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @producto }
     end

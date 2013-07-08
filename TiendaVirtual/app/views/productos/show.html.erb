@@ -37,6 +37,9 @@
   <dd><%= @producto.crianza %></dd>
   <dt><strong><%= model_class.human_attribute_name(:uva) %>:</strong></dt>
   <dd><%= @producto.uva %></dd>
+    <dt><strong><%= model_class.human_attribute_name(:imagen) %>:</strong></dt>
+  <dd><%= image_tag(@producto.imagen, class: 'list_image') %></dd>
+
 </dl>
 
 <div class="form-actions">
@@ -47,6 +50,6 @@
   <%= link_to t('.destroy', :default => "Eliminar"),
               producto_path(@producto),
               :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :data => { :confirm => "Esta seguro de eliminar?" },
               :class => 'btn btn-danger' %>
 </div>

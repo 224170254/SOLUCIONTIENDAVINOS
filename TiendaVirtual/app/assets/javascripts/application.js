@@ -20,3 +20,6 @@
 //= require twitter/bootstrap/bootstrap-collapse
 //= require_tree .
 
+$(document).ready(function() {
+  $('.field_with_errors').parent().addClass('error');
+});

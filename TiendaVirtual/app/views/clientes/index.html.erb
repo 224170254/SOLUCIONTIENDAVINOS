@@ -43,11 +43,14 @@
           <%= link_to t('.Edit', :default => "Editar"),
                       edit_cliente_path(cliente), :class => 'btn btn-mini' %>
                       
+                  
           <%= link_to t('.Destroy', :default => "Eliminar"),
                       cliente_path(cliente),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Esta Seguro?')) },
-                      :class => 'btn btn-mini btn-danger' %>
+                      :data => { :confirm => "Esta seguro de Eliminar el Registro?" },
+                      :class => 'btn btn-mini btn-danger' %>                      
+                      
+                      
         </td>
       </tr>
     <% end %>

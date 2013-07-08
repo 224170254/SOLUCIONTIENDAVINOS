@@ -1,9 +1,10 @@
 <%- model_class = Producto -%>
   <h3><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h3>
-<table class="table table-striped table-bordered table-condensed">
+<table class="table table-striped table-bordered ">
   <thead>
     <tr>
       <th>id</th>
+      <th>Imagen</th>
       <th>Tipo</th>
       <th>Descripcion</th>
       <th>Capacidad</th>
@@ -21,8 +22,8 @@
     <% @productoslst.each do |producto| %>
       <tr>
         <td><%= link_to producto.id, producto_path(producto) %></td>
-        <td><%= producto.Tipo %>
-        </td>
+        <td><%= image_tag(producto.imagen, class: 'list_image') %></td>
+        <td><%= producto.Tipo %></td>
         <td><%= producto.desc1 %></td>
         <td><%= producto.capacidad %></td>
         <td><%= producto.desc2%>
@@ -39,7 +40,7 @@
           <%= link_to t('.destroy', :default => "Eliminar"),
                       producto_path(producto),
                       :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :data => { :confirm => "Esta seguro de eliminar el registro?" },
                       :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
