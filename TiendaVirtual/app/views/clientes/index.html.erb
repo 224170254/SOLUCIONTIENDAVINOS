@@ -20,12 +20,7 @@
       <tr>
         <td><%= link_to cliente.id, cliente_path(cliente) %></td>
         <td><%= cliente.Rut %></td>
-        <td><%if cliente.estado== 0 %>
-        		<%= cliente.NombreApellido %>
-        	<%else%>
-        		<%= cliente.RazonSocial %>
-        	<%end%>
-        </td>
+        <td><%= cliente.NombreApellido %></td>
         <td><%= cliente.Direccion %></td>
         <td><%= cliente.Telefono %></td>
         <td><%= cliente.Movil %></td>

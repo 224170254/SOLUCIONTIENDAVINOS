@@ -1,4 +1,17 @@
 <%= form_for @cliente, :html => { :class => 'form-horizontal' } do |f| %>
+
+	<% if @cliente.errors.any? %>
+	    <div class="alert alert-error fade in">
+		  	<a class="close" data-dismiss="alert" href="#">&times;</a>
+  			<h4><%= pluralize(@cliente.errors.count, "Error") %> Revise los datos ingresados:</h4>
+     		<ul>
+      		<% @cliente.errors.full_messages.each do |msg| %>
+        		<li><%= msg %></li>
+      		<% end %>
+	      </ul>
+    	</div>
+   	  <% end %>
+  
   
    <div class="control-group">
    	<%= f.label :estado, "Tipo Cliente" , :class => 'control-label' %>
@@ -14,19 +27,13 @@
     </div>
   </div>
   
-  <div class="control-group">
-    <%= f.label :NombreApellido, 'Nombre y Apellido', :class => 'control-label' %>
+  <div id="clinap" class="control-group">
+    <%= f.label :NombreApellido, 'Nombre o Razon', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :NombreApellido, :class => 'text_field' %>
     </div>
   </div>
 
-  <div class="control-group">
-    <%= f.label :RazonSocial, 'Razon Social', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :RazonSocial, :class => 'text_field' %>
-    </div>
-  </div>
   <div class="control-group">
     <%= f.label :Direccion, :class => 'control-label' %>
     <div class="controls">
@@ -48,7 +55,7 @@
 
   <div class="control-group">
     <%= f.label :FechaNacimiento, 'Fecha Nac-Creacion', :class => 'control-label' %>
-    <div class="controls">
+    <div class="controls" >
       <%= f.date_select :FechaNacimiento, :class => 'date_select' %>
     </div>
   </div>

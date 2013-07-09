@@ -24,7 +24,7 @@
         <td><%= bodega.direccion %></td>
         <td><%= bodega.correo %></td>
         <td><%= bodega.telefono1 %></td>
-        <td><%=l bodega.created_at %></td>
+        <td><%= bodega.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => "Editar"),
                       edit_bodega_path(bodega), :class => 'btn btn-mini' %>

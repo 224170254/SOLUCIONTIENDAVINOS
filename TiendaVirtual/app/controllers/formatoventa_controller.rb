@@ -26,7 +26,7 @@ class FormatoventaController < ApplicationController
   # GET /formatoventa/new.json
   def new
     @formatoventum = Formatoventum.new
-
+     @mixboton = "Crear "
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @formatoventum }
@@ -36,13 +36,14 @@ class FormatoventaController < ApplicationController
   # GET /formatoventa/1/edit
   def edit
     @formatoventum = Formatoventum.find(params[:id])
+    @mixboton = "Actualizar "
   end
 
   # POST /formatoventa
   # POST /formatoventa.json
   def create
     @formatoventum = Formatoventum.new(params[:formatoventum])
-
+    @mixboton = "Crear "
     respond_to do |format|
       if @formatoventum.save
         format.html { redirect_to @formatoventum, notice: 'Formatoventum was successfully created.' }
@@ -58,7 +59,7 @@ class FormatoventaController < ApplicationController
   # PUT /formatoventa/1.json
   def update
     @formatoventum = Formatoventum.find(params[:id])
-
+@mixboton = "Actualizar "
     respond_to do |format|
       if @formatoventum.update_attributes(params[:formatoventum])
         format.html { redirect_to @formatoventum, notice: 'Formatoventum was successfully updated.' }

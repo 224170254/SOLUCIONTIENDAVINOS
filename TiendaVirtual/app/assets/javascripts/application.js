@@ -18,8 +18,32 @@
 //= require twitter/bootstrap/bootstrap-modal
 //= require twitter/bootstrap/bootstrap-button
 //= require twitter/bootstrap/bootstrap-collapse
+
 //= require_tree .
 
 $(document).ready(function() {
   $('.field_with_errors').parent().addClass('error');
-});
+
+//$('#cliente_estado').change(function() {
+//	alert($(this).val());
+	
+//	if ($(this).val() == 0){
+//		$(clirz).css("display", "none");
+//		$(clinap).css("display", "block");
+//	} else
+//	{
+//		$(clinap).css("display", "block");
+//		$(clirz).css("display", "none")		
+//		
+//	}	
+//})
+
+
+}
+);
+
+
+//function ocultardiv(control1,control2){
+//	$(control1).css("display", "none");
+//	$(control2).css("display", "block");		
+//}

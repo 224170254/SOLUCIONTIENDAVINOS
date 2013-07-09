@@ -1,4 +1,16 @@
 <%= form_for @bodega, :html => { :class => 'form-horizontal' } do |f| %>
+	<% if @bodega.errors.any? %>
+	    <div class="alert alert-error fade in">
+		  	<a class="close" data-dismiss="alert" href="#">&times;</a>
+  			<h4><%= pluralize(@bodega.errors.count, "Error") %> Revise los datos ingresados:</h4>
+     		<ul>
+      		<% @bodega.errors.full_messages.each do |msg| %>
+        		<li><%= msg %></li>
+      		<% end %>
+	      </ul>
+    	</div>
+   	  <% end %>
+
 
   <div class="control-group">
     <%= f.label :rut,"Rut", :class => 'control-label' %>

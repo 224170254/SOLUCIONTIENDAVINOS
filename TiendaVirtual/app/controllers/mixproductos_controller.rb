@@ -1,5 +1,5 @@
 class MixproductosController < ApplicationController
-     layout "simple1"
+  layout "AdminLayout"
   # GET /mixproductos
   # GET /mixproductos.json
   def index
@@ -36,13 +36,14 @@ class MixproductosController < ApplicationController
   # GET /mixproductos/1/edit
   def edit
     @mixproducto = Mixproducto.find(params[:id])
+    @mixboton = "Editar "
   end
 
   # POST /mixproductos
   # POST /mixproductos.json
   def create
     @mixproducto = Mixproducto.new(params[:mixproducto])
-
+    @mixboton = "Crear "
     respond_to do |format|
       if @mixproducto.save
         format.html { redirect_to @mixproducto, notice: 'Mixproducto was successfully created.' }

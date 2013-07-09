@@ -13,13 +13,9 @@
   </dd>
   <dt><strong>Rut:</strong></dt><dd><%= @cliente.Rut %></dd>
   
-  	<%if @cliente.estado == 0 %>
-	  	<dt><strong>Nombre:</strong></dt>
+	  	<dt><strong>Nombre o Razon:</strong></dt>
 	  	<dd><%= @cliente.NombreApellido %></dd>
-  	<%else%>
-  		<dt><strong>Razon Social:</strong></dt>
-  		<dd><%= @cliente.RazonSocial %></dd>  		
-  	<%end%> 	
+  
   <dt><strong>Direccion : </strong></dt><dd><%= @cliente.Direccion %></dd>
   <dt><strong>Telefono :</strong></dt><dd><%= @cliente.Telefono %></dd>
   <dt><strong>Celular:</strong></dt><dd><%= @cliente.Movil %></dd>

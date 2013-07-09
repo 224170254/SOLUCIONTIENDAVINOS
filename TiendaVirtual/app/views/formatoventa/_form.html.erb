@@ -1,4 +1,16 @@
 <%= form_for @formatoventum, :html => { :class => 'form-horizontal' } do |f| %>
+
+	<% if @formatoventum.errors.any? %>
+	    <div class="alert alert-error fade in">
+		  	<a class="close" data-dismiss="alert" href="#">&times;</a>
+  			<h4><%= pluralize(@formatoventum.errors.count, "Error") %> Revise los datos ingresados:</h4>
+     		<ul>
+      		<% @formatoventum.errors.full_messages.each do |msg| %>
+        		<li><%= msg %></li>
+      		<% end %>
+	      </ul>
+    	</div>
+   	  <% end %>
   <div class="control-group">
     <%= f.label :descripcion, :class => 'control-label' %>
     <div class="controls">
@@ -19,8 +31,8 @@
   </div>
 
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+    <%= f.submit @mixboton + " Formato", :class => 'btn btn-primary' %>
+    <%= link_to t('Cancelar', :default => t("helpers.links.cancel")),
                 formatoventa_path, :class => 'btn' %>
   </div>
 <% end %>

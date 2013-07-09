@@ -15,7 +15,7 @@ class BodegasController < ApplicationController
   # GET /bodegas/1.json
   def show
     @bodega = Bodega.find(params[:id])
-
+ 
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @bodega }
@@ -26,8 +26,7 @@ class BodegasController < ApplicationController
   # GET /bodegas/new.json
   def new
     @bodega = Bodega.new
-          @boton = "Nueva Bodega"
-
+    @boton = "Nueva Bodega"
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @bodega }
@@ -44,7 +43,6 @@ class BodegasController < ApplicationController
   # POST /bodegas.json
   def create
     @bodega = Bodega.new(params[:bodega])
-
     respond_to do |format|
       if @bodega.save
         format.html { redirect_to @bodega, notice: 'Bodega was successfully created.' }

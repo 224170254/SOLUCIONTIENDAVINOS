@@ -1,14 +1,13 @@
 <%- model_class = Formatoventum -%>
-  <h2>Formatos de Venta</h2>
+  <h3>Formatos</h3>
 
-<table class="table table-striped">
+<table class="table table-striped table-bordered">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:descripcion) %></th>
       <th><%= model_class.human_attribute_name(:unidades) %></th>
       <th><%= model_class.human_attribute_name(:costoadicional) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -19,7 +18,6 @@
         <td><%= formatoventum.descripcion %></td>
         <td><%= formatoventum.unidades %></td>
         <td><%= formatoventum.costoadicional %></td>
-        <td><%=l formatoventum.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => "Editar"),
                       edit_formatoventum_path(formatoventum), :class => 'btn btn-mini' %>
@@ -34,6 +32,6 @@
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<%= link_to t('.new', :default => t("helpers.links.new") + " Formato"),
             new_formatoventum_path,
             :class => 'btn btn-primary' %>
